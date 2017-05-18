@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -180,9 +181,8 @@ public class Creature {
 		amount = (int)(Math.random() * amount) + 1;
 		
 		Object[] params2 = new Object[params.length+1];
-		for (int i = 0; i < params.length; i++){
-			params2[i] = params[i];
-		}
+		params2 = Arrays.copyOf(params, params.length+1);
+		
 		params2[params2.length - 1] = amount;
 		
 		doAction(action, params2);
